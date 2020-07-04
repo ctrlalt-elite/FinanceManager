@@ -1,0 +1,65 @@
+input {
+    display: block;
+    height: auto;
+    padding: 0;
+    background-color: transparent;
+    box-shadow: none;
+    border-radius: 5px;
+    color: #005fb9;
+    font-family: "Gotham Display",sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+input {
+    padding: 20px 16px 20px;
+    display: block;
+    border: 2px solid black;
+    line-height: 1;
+  }
+  
+  input[type="text"]::placeholder {
+    opacity: 1;
+    transform: translateY(17px);
+    font-size: 0.7em;
+  }
+  
+  @-moz-document url-prefix() {
+      input[type="text"]::placeholder {
+          text-shadow: 0 17px 0 rgba(0, 0, 0, 0.8);
+          color: transparent;
+      }
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  label {
+    display: inline-block;
+    margin-bottom: 8px;
+  }
+  
+  
+  
+  @use postcss-preset-env {
+      stage: 0;
+      browsers: [
+          "last 1 Chrome versions",
+          "last 1 Firefox versions",
+          "last 1 Safari versions"
+      ]
+  }
