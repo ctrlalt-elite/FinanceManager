@@ -25,28 +25,17 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="../index.html">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
+                    <a class="nav-link" href="../Pages/chat.html">Send/Request Money</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="#">SMS Parser <span class="sr-only">(current)</span></a>
                 </li>
-                <!-- Example single danger button -->
-                <div class="btn-group">
-                    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        Action
-                    </button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Separated link</a>
-                    </div>
-                </div>
+                <li class="nav-item">
+                    <a class="nav-link" href="../Pages/budgetCalculator.html">50/30/20 Rule</a>
+                </li>
             </ul>
         </div>
     </nav>
@@ -68,7 +57,7 @@
     </section>
 
     <pre class="default prettyprint prettyprinted"
-        style="width: fit-content; background-color: #eee; display: block; margin: auto;"><code><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">ReceivelocationActivity</span><span class="pln"> </span><span class="kwd">extends</span><span class="pln"> </span><span class="typ">BroadcastReceiver</span><span class="pln">   </span><span class="pun">{</span><span class="pln">
+        style="width: fit-content; background-color: #eee; display: block; margin: auto; height: 70vh; width: 95%; max-width: 1000px; overflow: scroll;"><code><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">ReceivelocationActivity</span><span class="pln"> </span><span class="kwd">extends</span><span class="pln"> </span><span class="typ">BroadcastReceiver</span><span class="pln">   </span><span class="pun">{</span><span class="pln">
 
     </span><span class="kwd">private</span><span class="pln"> </span><span class="typ">LocationManager</span><span class="pln"> hdLocMgr</span><span class="pun">;</span><span class="pln">
     </span><span class="kwd">private</span><span class="pln"> </span><span class="typ">String</span><span class="pln"> hdLocProvider</span><span class="pun">;</span><span class="pln">
@@ -251,7 +240,7 @@
     </section>
 
     <pre class="default prettyprint prettyprinted"
-        style="width: fit-content; background-color: #eee; display: block; margin: auto;"><code><span class="lit">@Override</span><span class="pln">
+        style="width: fit-content; background-color: #eee; display: block; margin: auto; width: 95%; max-width: 1000px; overflow: scroll;"><code><span class="lit">@Override</span><span class="pln">
     </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> onReceive</span><span class="pun">(</span><span class="typ">Context</span><span class="pln"> context</span><span class="pun">,</span><span class="pln"> </span><span class="typ">Intent</span><span class="pln"> intent</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
         </span><span class="kwd">byte</span><span class="pun">[]</span><span class="pln"> pdu </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="kwd">byte</span><span class="pun">[</span><span class="lit">0</span><span class="pun">];</span><span class="pln"> </span><span class="com">//obviously use the real pdu in your app</span><span class="pln">
         </span><span class="typ">Intent</span><span class="pln"> intent </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Intent</span><span class="pun">(</span><span class="kwd">this</span><span class="pun">,</span><span class="pln"> </span><span class="typ">NewActivity</span><span class="pun">.</span><span class="kwd">class</span><span class="pun">);</span><span class="pln">
@@ -267,7 +256,7 @@
         </p>
     </section>
 
-    <pre class="default prettyprint prettyprinted" style="width: fit-content; background-color: #eee; display: block; margin: auto;"><code><span class="lit">@Override</span><span class="pln">
+    <pre class="default prettyprint prettyprinted" style="width: fit-content; background-color: #eee; display: block; margin: auto; width: 95%; max-width: 1000px; overflow: scroll;"><code><span class="lit">@Override</span><span class="pln">
     </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> onCreate</span><span class="pun">(</span><span class="typ">Bundle</span><span class="pln"> savedInstanceState</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
             </span><span class="kwd">super</span><span class="pun">.</span><span class="pln">onCreate</span><span class="pun">(</span><span class="pln">savedInstanceState</span><span class="pun">);</span><span class="pln">
             </span><span class="kwd">byte</span><span class="pun">[]</span><span class="pln"> pdu </span><span class="pun">=</span><span class="pln"> getIntent</span><span class="pun">().</span><span class="pln">getByteArrayExtra</span><span class="pun">(</span><span class="str">"smsPdu"</span><span class="pun">);</span><span class="pln">
