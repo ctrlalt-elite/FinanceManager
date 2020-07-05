@@ -234,15 +234,51 @@
 
     <section style="margin: auto; width: 95%;">
         <h4>Solution Outcome:</h2>
+            <p>
+                Automating the task of pulling data from specified SMS provider and parse that data into
+                an object with the condition of auto parsing in case of new SMS is received from the specified SMS
+                provider.
+                Example: so if I received SMS with the value of ₹10 and 2nd SMS was ₹20, I automatically see the pulled
+                data
+                which is the number ₹30 parsed in Google Keep or listonic or any app. The final number matters, so I
+                would
+                balance my expenses and savings.
+            </p>
+            <p>
+                You can pass data between activities using Intents. In the BroadcastReceiver where you receive the SMS,
+                you can do something like this:
+            </p>
+    </section>
+
+    <pre class="default prettyprint prettyprinted"
+        style="width: fit-content; background-color: #eee; display: block; margin: auto;"><code><span class="lit">@Override</span><span class="pln">
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> onReceive</span><span class="pun">(</span><span class="typ">Context</span><span class="pln"> context</span><span class="pun">,</span><span class="pln"> </span><span class="typ">Intent</span><span class="pln"> intent</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">byte</span><span class="pun">[]</span><span class="pln"> pdu </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="kwd">byte</span><span class="pun">[</span><span class="lit">0</span><span class="pun">];</span><span class="pln"> </span><span class="com">//obviously use the real pdu in your app</span><span class="pln">
+        </span><span class="typ">Intent</span><span class="pln"> intent </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Intent</span><span class="pun">(</span><span class="kwd">this</span><span class="pun">,</span><span class="pln"> </span><span class="typ">NewActivity</span><span class="pun">.</span><span class="kwd">class</span><span class="pun">);</span><span class="pln">
+        intent</span><span class="pun">.</span><span class="pln">setFlags</span><span class="pun">(</span><span class="typ">Intent</span><span class="pun">.</span><span class="pln">FLAG_ACTIVITY_NEW_TASK</span><span class="pun">);</span><span class="pln">
+        intent</span><span class="pun">.</span><span class="pln">putExtra</span><span class="pun">(</span><span class="str">"smsPdu"</span><span class="pun">,</span><span class="pln"> pdu</span><span class="pun">);</span><span class="pln">
+        context</span><span class="pun">.</span><span class="pln">startActivity</span><span class="pun">(</span><span class="pln">intent</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span></code></pre>
+
+    <section style="margin: auto; width: 95%;">
         <p>
-            Automating the task of pulling data from specified SMS provider and parse that data into
-            an object with the condition of auto parsing in case of new SMS is received from the specified SMS provider.
-            Example: so if I received SMS with the value of ₹10 and 2nd SMS was ₹20, I automatically see the pulled data
-            which is the number ₹30 parsed in Google Keep or listonic or any app. The final number matters, so I would
-            balance my expenses and savings.
+            You can pass data between activities using Intents. In the BroadcastReceiver where you receive the SMS,
+            you can do something like this:
         </p>
     </section>
 
+    <pre class="default prettyprint prettyprinted" style="width: fit-content; background-color: #eee; display: block; margin: auto;"><code><span class="lit">@Override</span><span class="pln">
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> onCreate</span><span class="pun">(</span><span class="typ">Bundle</span><span class="pln"> savedInstanceState</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            </span><span class="kwd">super</span><span class="pun">.</span><span class="pln">onCreate</span><span class="pun">(</span><span class="pln">savedInstanceState</span><span class="pun">);</span><span class="pln">
+            </span><span class="kwd">byte</span><span class="pun">[]</span><span class="pln"> pdu </span><span class="pun">=</span><span class="pln"> getIntent</span><span class="pun">().</span><span class="pln">getByteArrayExtra</span><span class="pun">(</span><span class="str">"smsPdu"</span><span class="pun">);</span><span class="pln">
+            </span><span class="typ">SmsMessage</span><span class="pln"> message </span><span class="pun">=</span><span class="pln"> </span><span class="typ">SmsMessage</span><span class="pun">.</span><span class="pln">createFromPdu</span><span class="pun">(</span><span class="pln">pdu</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span></code></pre>
+
+    <section style="margin: auto; width: 95%;">
+        <p>
+            See the documentation <a href="https://developer.android.com/guide/components/intents-filters" style="color: turquoise;">here</a> for a better overview of <b>Intents</b>.
+        </p>
+    </section>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
