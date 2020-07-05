@@ -1,0 +1,92 @@
+.logo{
+    display: block;
+    margin: auto;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.container{
+    width: 85%;
+    max-width: 800px;
+    border-radius: 2%;
+    border: 2px solid rgb(81, 163, 4);
+    margin: auto;
+    height: 75vh;
+    overflow-y: scroll;
+    margin-bottom: 23px;
+}
+
+.buttons{
+    display: block;
+    margin: auto;
+    text-align: center;
+    max-width: 985px;
+    width: 100%;
+    padding: 10px;
+}
+
+.pay{
+    margin: auto;
+    margin-inline-end: 10px;
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 6px;
+    height: 60px;
+}
+
+.req{
+    margin: auto;
+    margin-inline-end: 10px;
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 6px;
+    height: 60px;
+}
+
+.message{
+    background-color: rgb(214, 213, 213);
+    width: 50%;
+    padding: 10px;
+    margin: 17px 12px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.right{
+    float: right;
+    clear: both;
+}
+
+.left{
+    float: left;
+    clear: both;
+}
+
+#send-container{
+    display: block;
+    margin: auto;
+    text-align: center;
+    max-width: 985px;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+#messageInp{
+    width: 91%;
+    border: 2px solid black;
+    border-radius: 6px;
+    height: 34px;
+}
+
+.btncust{
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 6px;
+    height: 34px;
+}
+
+body{
+    height: 100%;
+    background-image: linear-gradient(black, rgb(0, 109, 0));
+}
