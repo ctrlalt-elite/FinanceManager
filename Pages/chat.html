@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>CtrlAlt - Elite: Send/Request</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/chat.css">
+    <link rel="icon" href="../Images/money-clip-art-4.jpg">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger" style="padding: 0.25%;">
+        <a class="navbar-brand" href="#" style="margin-left: 1%;"><img src="../Images/money-clip-art-4.jpg" alt="logo"
+                width="50" height="50" style="border-radius: 100%;"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="../index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="../Pages/chat.html">Send/Request Money</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../Pages/SMS.html">SMS Parser</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../Pages/budgetCalculator.html">50/30/20 Rule</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <nav>
+        <img class="logo" src="../Images/money-clip-art-4.jpg" alt="">
+    </nav>
+    <div class="container">
+        <div class="message right">This is simply a front-end of chat window to give an idea of concept. How shall we
+            communicate in real time?</div>
+        <div class="message left">Backend shall be developed using NodeJS and Socket.io.</div>
+        <div class="message right">What is socket.io?</div>
+        <div class="message left">Socket.IO enables real-time, bidirectional and event-based communication.
+            It works on every platform, browser or device, focusing equally on reliability and speed.</div>
+        <div class="message right">That sounds cool! Where shall I find it's documantation?</div>
+        <div class="message left">Follow up their official site for more information. <a href="https://socket.io/">LINK!</a> </div>
+    </div>
+
+    <div class="buttons">
+        <button class="req">Request Money</button>
+        <button class="pay">Pay Money</button>
+    </div>
+
+    <div class="send">
+        <form action="#" id="send-container">
+            <input type="text" name="messageInp" id="messageInp">
+            <button class="btncust" type="submit">Send</button>
+        </form>
+    </div>
+</body>
+
+</html>
