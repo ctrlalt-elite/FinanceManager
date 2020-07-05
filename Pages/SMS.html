@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>Ctrl Alt Elite - Finance Manager</title>
+    <link rel="icon" href="../Images/money-clip-art-4.jpg">
+</head>
+
+<body style="background-color: rgb(44, 44, 44); color: seashell;">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger" style="padding: 0.25%;">
+        <a class="navbar-brand" href="#" style="margin-left: 1%;"><img src="../Images/money-clip-art-4.jpg" alt="logo"
+                width="50" height="50" style="border-radius: 100%;"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">SMS Parser <span class="sr-only">(current)</span></a>
+                </li>
+                <!-- Example single danger button -->
+                <div class="btn-group">
+                    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Action
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Separated link</a>
+                    </div>
+                </div>
+            </ul>
+        </div>
+    </nav>
+
+    <section style="margin: auto; width: 95%;">
+        <h2>SMS Parser</h2>
+        <br>
+
+        <h4>What is the purpose of parsing SMS data?</h4>
+        <p>Most of our daily life transactions take place in either cash or credit payments. However, our device can
+            access data only across different applications in itself (yet).
+            Although, we <i>might</i> ease the process of managing our financial wallet by <i><b>extracting</b></i> data
+            from messages which we get after successfully paying to another account
+            using any of the online payment apps like Google Pay, PhonePe, PayTM and so on. Parsing helps extract
+            credited or debited amount from the SMS received by your device and hence change
+            respective amount in your budget wallet accordingly. <i> Making it <b>dead easy</b> to maintain your savings
+                even without manually changing it! </i>
+        </p>
+    </section>
+
+    <pre class="default prettyprint prettyprinted"
+        style="width: fit-content; background-color: #eee; display: block; margin: auto;"><code><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">ReceivelocationActivity</span><span class="pln"> </span><span class="kwd">extends</span><span class="pln"> </span><span class="typ">BroadcastReceiver</span><span class="pln">   </span><span class="pun">{</span><span class="pln">
+
+    </span><span class="kwd">private</span><span class="pln"> </span><span class="typ">LocationManager</span><span class="pln"> hdLocMgr</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">private</span><span class="pln"> </span><span class="typ">String</span><span class="pln"> hdLocProvider</span><span class="pun">;</span><span class="pln">
+    
+    </span><span class="lit">@Override</span><span class="pln">
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> onReceive</span><span class="pun">(</span><span class="typ">Context</span><span class="pln"> context</span><span class="pun">,</span><span class="pln"> </span><span class="typ">Intent</span><span class="pln"> intent</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="com">// TODO Auto-generated method stub</span><span class="pln">
+    
+        </span><span class="typ">Intent</span><span class="pln"> m</span><span class="pun">=</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Intent</span><span class="pun">(</span><span class="pln">context</span><span class="pun">,</span><span class="pln"> </span><span class="typ">ReceivelocationActivity</span><span class="pun">.</span><span class="kwd">class</span><span class="pun">);</span><span class="pln">    
+          </span><span class="typ">PendingIntent</span><span class="pln"> pi</span><span class="pun">=</span><span class="typ">PendingIntent</span><span class="pun">.</span><span class="pln">getBroadcast</span><span class="pun">(</span><span class="pln">context</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> m</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">);</span><span class="pln"> 
+        </span><span class="typ">Bundle</span><span class="pln"> bundle </span><span class="pun">=</span><span class="pln"> intent</span><span class="pun">.</span><span class="pln">getExtras</span><span class="pun">();</span><span class="pln">        
+        </span><span class="typ">SmsMessage</span><span class="pun">[]</span><span class="pln"> msgs </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">null</span><span class="pun">;</span><span class="pln">
+        </span><span class="typ">String</span><span class="pln"> str </span><span class="pun">=</span><span class="pln"> </span><span class="str">""</span><span class="pun">;</span><span class="pln"> 
+        </span><span class="typ">String</span><span class="pln"> str2</span><span class="pun">=</span><span class="str">""</span><span class="pun">;</span><span class="pln">
+        </span><span class="typ">String</span><span class="pln"> str3</span><span class="pun">=</span><span class="str">""</span><span class="pun">;</span><span class="pln">
+        </span><span class="typ">String</span><span class="pln"> autoReplyToken </span><span class="pun">=</span><span class="pln"> </span><span class="str">"Request_Accepted"</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">bundle </span><span class="pun">!=</span><span class="pln"> </span><span class="kwd">null</span><span class="pun">)</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+            </span><span class="com">//---retrieve the SMS message received---</span><span class="pln">
+            </span><span class="typ">Object</span><span class="pun">[]</span><span class="pln"> pdus </span><span class="pun">=</span><span class="pln"> </span><span class="pun">(</span><span class="typ">Object</span><span class="pun">[])</span><span class="pln"> bundle</span><span class="pun">.</span><span class="kwd">get</span><span class="pun">(</span><span class="str">"pdus"</span><span class="pun">);</span><span class="pln">
+            msgs </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">SmsMessage</span><span class="pun">[</span><span class="pln">pdus</span><span class="pun">.</span><span class="pln">length</span><span class="pun">];</span><span class="pln">            
+            </span><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> i</span><span class="pun">=</span><span class="lit">0</span><span class="pun">;</span><span class="pln"> i</span><span class="pun">&lt;</span><span class="pln">msgs</span><span class="pun">.</span><span class="pln">length</span><span class="pun">;</span><span class="pln"> i</span><span class="pun">++){</span><span class="pln">
+                msgs</span><span class="pun">[</span><span class="pln">i</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="typ">SmsMessage</span><span class="pun">.</span><span class="pln">createFromPdu</span><span class="pun">((</span><span class="kwd">byte</span><span class="pun">[])</span><span class="pln">pdus</span><span class="pun">[</span><span class="pln">i</span><span class="pun">]);</span><span class="pln">                
+                str </span><span class="pun">+=</span><span class="pln"> </span><span class="str">"SMS from "</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> msgs</span><span class="pun">[</span><span class="pln">i</span><span class="pun">].</span><span class="pln">getOriginatingAddress</span><span class="pun">();</span><span class="pln">                     
+                str2</span><span class="pun">=</span><span class="pln">msgs</span><span class="pun">[</span><span class="pln">i</span><span class="pun">].</span><span class="pln">getOriginatingAddress</span><span class="pun">();</span><span class="pln">
+                str </span><span class="pun">+=</span><span class="pln"> </span><span class="str">" :"</span><span class="pun">;</span><span class="pln">
+                str </span><span class="pun">+=</span><span class="pln"> msgs</span><span class="pun">[</span><span class="pln">i</span><span class="pun">].</span><span class="pln">getMessageBody</span><span class="pun">().</span><span class="pln">toString</span><span class="pun">();</span><span class="pln">
+             str3</span><span class="pun">=</span><span class="pln">msgs</span><span class="pun">[</span><span class="pln">i</span><span class="pun">].</span><span class="pln">getMessageBody</span><span class="pun">().</span><span class="pln">toString</span><span class="pun">();</span><span class="pln">
+                str </span><span class="pun">+=</span><span class="pln"> </span><span class="str">"\n"</span><span class="pun">;</span><span class="pln">        
+            </span><span class="pun">}</span><span class="pln">
+            </span><span class="com">//---display the new SMS message---</span><span class="pln">
+            </span><span class="typ">Toast</span><span class="pun">.</span><span class="pln">makeText</span><span class="pun">(</span><span class="pln">context</span><span class="pun">,</span><span class="pln"> str</span><span class="pun">,</span><span class="pln"> </span><span class="typ">Toast</span><span class="pun">.</span><span class="pln">LENGTH_SHORT</span><span class="pun">).</span><span class="pln">show</span><span class="pun">();</span><span class="pln">
+          </span><span class="com">//  int number=Integer.parseInt(str2);</span><span class="pln">
+    
+         </span><span class="com">// retrieve th current location</span><span class="pln">
+            </span><span class="typ">Criteria</span><span class="pln"> hdCrit </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Criteria</span><span class="pun">();</span><span class="pln">
+            hdCrit</span><span class="pun">.</span><span class="pln">setAccuracy</span><span class="pun">(</span><span class="typ">Criteria</span><span class="pun">.</span><span class="pln">ACCURACY_COARSE</span><span class="pun">);</span><span class="pln">
+            hdCrit</span><span class="pun">.</span><span class="pln">setAltitudeRequired</span><span class="pun">(</span><span class="kwd">false</span><span class="pun">);</span><span class="pln">
+            hdCrit</span><span class="pun">.</span><span class="pln">setBearingRequired</span><span class="pun">(</span><span class="kwd">false</span><span class="pun">);</span><span class="pln">
+            hdCrit</span><span class="pun">.</span><span class="pln">setCostAllowed</span><span class="pun">(</span><span class="kwd">true</span><span class="pun">);</span><span class="pln">
+            hdCrit</span><span class="pun">.</span><span class="pln">setPowerRequirement</span><span class="pun">(</span><span class="typ">Criteria</span><span class="pun">.</span><span class="pln">POWER_LOW</span><span class="pun">);</span><span class="pln">
+    
+            hdLocMgr </span><span class="pun">=</span><span class="pln"> </span><span class="pun">(</span><span class="typ">LocationManager</span><span class="pun">)</span><span class="pln"> context</span><span class="pun">.</span><span class="pln">getSystemService</span><span class="pun">(</span><span class="typ">Context</span><span class="pun">.</span><span class="pln">LOCATION_SERVICE</span><span class="pun">);</span><span class="pln">
+    
+            hdLocProvider </span><span class="pun">=</span><span class="pln"> hdLocMgr</span><span class="pun">.</span><span class="pln">getBestProvider</span><span class="pun">(</span><span class="pln">hdCrit</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">);</span><span class="pln"> 
+    
+            </span><span class="typ">Location</span><span class="pln"> location </span><span class="pun">=</span><span class="pln"> hdLocMgr</span><span class="pun">.</span><span class="pln">getLastKnownLocation</span><span class="pun">(</span><span class="pln">hdLocProvider</span><span class="pun">);</span><span class="pln">
+    
+            </span><span class="typ">Double</span><span class="pln"> dlat </span><span class="pun">=</span><span class="pln"> location</span><span class="pun">.</span><span class="pln">getLatitude</span><span class="pun">();</span><span class="pln">
+            </span><span class="typ">Double</span><span class="pln"> dlon </span><span class="pun">=</span><span class="pln"> location</span><span class="pun">.</span><span class="pln">getLongitude</span><span class="pun">();</span><span class="pln">
+    
+    
+            </span><span class="typ">String</span><span class="pln"> mymsg </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Double</span><span class="pun">.</span><span class="pln">toString</span><span class="pun">(</span><span class="pln">dlat</span><span class="pun">)</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> </span><span class="str">" "</span><span class="pln"> </span><span class="pun">+</span><span class="typ">Double</span><span class="pun">.</span><span class="pln">toString</span><span class="pun">(</span><span class="pln">dlon</span><span class="pun">)</span><span class="pln"> </span><span class="pun">;</span><span class="pln"> 
+    
+            </span><span class="kwd">boolean</span><span class="pln"> isAutoReply </span><span class="pun">=</span><span class="pln"> str3</span><span class="pun">.</span><span class="pln">startsWith</span><span class="pun">(</span><span class="pln">autoReplyToken</span><span class="pun">);</span><span class="pln">
+    
+            </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(!</span><span class="pln">isAutoReply</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                </span><span class="typ">SmsManager</span><span class="pln"> sms </span><span class="pun">=</span><span class="pln"> </span><span class="typ">SmsManager</span><span class="pun">.</span><span class="pln">getDefault</span><span class="pun">();</span><span class="pln">
+                </span><span class="typ">String</span><span class="pln"> autoReplyText </span><span class="pun">=</span><span class="pln"> autoReplyToken </span><span class="pun">+</span><span class="pln"> </span><span class="str">" "</span><span class="pun">+</span><span class="pln">mymsg</span><span class="pun">;</span><span class="pln">
+                sms</span><span class="pun">.</span><span class="pln">sendTextMessage</span><span class="pun">(</span><span class="pln">str2</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">null</span><span class="pun">,</span><span class="pln"> autoReplyText</span><span class="pun">,</span><span class="pln"> pi</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">null</span><span class="pun">);</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+    
+          </span><span class="com">/* Part as suggested by you to pass a string to friendlocation.class  */</span><span class="pln">  
+            </span><span class="typ">Intent</span><span class="pln"> </span><span class="kwd">in</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Intent</span><span class="pun">(</span><span class="pln">context</span><span class="pun">,</span><span class="pln"> </span><span class="typ">Friendlocation</span><span class="pun">.</span><span class="kwd">class</span><span class="pun">);</span><span class="pln">
+            </span><span class="kwd">in</span><span class="pun">.</span><span class="pln">setFlags</span><span class="pun">(</span><span class="typ">Intent</span><span class="pun">.</span><span class="pln">FLAG_ACTIVITY_NEW_TASK</span><span class="pun">);</span><span class="pln">
+            </span><span class="kwd">in</span><span class="pun">.</span><span class="pln">putExtra</span><span class="pun">(</span><span class="str">"latlongstring"</span><span class="pun">,</span><span class="pln"> str3</span><span class="pun">);</span><span class="pln">
+            context</span><span class="pun">.</span><span class="pln">startActivity</span><span class="pun">(</span><span class="kwd">in</span><span class="pun">);</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">                 
+    </span><span class="pun">}</span><span class="pln">
+    
+    
+    
+        </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">Friendlocation</span><span class="pln"> </span><span class="kwd">extends</span><span class="pln"> </span><span class="typ">MapActivity</span><span class="pln"> </span><span class="kwd">implements</span><span class="pln"> </span><span class="typ">LocationListener</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+         </span><span class="com">/** Called when the activity is first created. */</span><span class="pln">
+    </span><span class="kwd">private</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">final</span><span class="pln"> </span><span class="typ">String</span><span class="pln"> TAG </span><span class="pun">=</span><span class="pln"> </span><span class="str">"LocationActivity"</span><span class="pun">;</span><span class="pln">
+    </span><span class="typ">LocationManager</span><span class="pln"> locationManager</span><span class="pun">;</span><span class="pln"> 
+      </span><span class="typ">Geocoder</span><span class="pln"> geocoder</span><span class="pun">;</span><span class="pln"> 
+      </span><span class="typ">TextView</span><span class="pln"> locationText</span><span class="pun">;</span><span class="pln">
+      </span><span class="typ">MapView</span><span class="pln"> map</span><span class="pun">;</span><span class="pln">  
+      </span><span class="typ">MapController</span><span class="pln"> mapController</span><span class="pun">;</span><span class="pln"> 
+      </span><span class="typ">GeoPoint</span><span class="pln"> point</span><span class="pun">;</span><span class="pln">
+    
+      </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">MapOverlay</span><span class="pln"> </span><span class="kwd">extends</span><span class="pln"> com</span><span class="pun">.</span><span class="pln">google</span><span class="pun">.</span><span class="pln">android</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Overlay</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+            </span><span class="lit">@Override</span><span class="pln">
+            </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">boolean</span><span class="pln"> draw</span><span class="pun">(</span><span class="typ">Canvas</span><span class="pln"> canvas</span><span class="pun">,</span><span class="pln"> </span><span class="typ">MapView</span><span class="pln"> mapView</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">boolean</span><span class="pln"> shadow</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">long</span><span class="pln">   </span><span class="kwd">when</span><span class="pun">)</span><span class="pln"> 
+            </span><span class="pun">{</span><span class="pln">
+                </span><span class="kwd">super</span><span class="pun">.</span><span class="pln">draw</span><span class="pun">(</span><span class="pln">canvas</span><span class="pun">,</span><span class="pln"> mapView</span><span class="pun">,</span><span class="pln"> shadow</span><span class="pun">);</span><span class="pln">                   
+    
+                </span><span class="com">//---translate the GeoPoint to screen pixels---</span><span class="pln">
+                </span><span class="typ">Point</span><span class="pln"> screenPts </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Point</span><span class="pun">();</span><span class="pln">
+                mapView</span><span class="pun">.</span><span class="pln">getProjection</span><span class="pun">().</span><span class="pln">toPixels</span><span class="pun">(</span><span class="pln">point</span><span class="pun">,</span><span class="pln"> screenPts</span><span class="pun">);</span><span class="pln">
+    
+                </span><span class="com">//---add the marker---</span><span class="pln">
+                </span><span class="typ">Bitmap</span><span class="pln"> bmp </span><span class="pun">=</span><span class="pln"> </span><span class="typ">BitmapFactory</span><span class="pun">.</span><span class="pln">decodeResource</span><span class="pun">(</span><span class="pln">
+                    getResources</span><span class="pun">(),</span><span class="pln"> R</span><span class="pun">.</span><span class="pln">drawable</span><span class="pun">.</span><span class="pln">androidmarker</span><span class="pun">);</span><span class="pln">            
+                canvas</span><span class="pun">.</span><span class="pln">drawBitmap</span><span class="pun">(</span><span class="pln">bmp</span><span class="pun">,</span><span class="pln"> screenPts</span><span class="pun">.</span><span class="pln">x</span><span class="pun">,</span><span class="pln"> screenPts</span><span class="pun">.</span><span class="pln">y</span><span class="pun">-</span><span class="lit">50</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">null</span><span class="pun">);</span><span class="pln">         
+                </span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">;</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln"> 
+    
+    
+    </span><span class="lit">@Override</span><span class="pln">
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> onCreate</span><span class="pun">(</span><span class="typ">Bundle</span><span class="pln"> savedInstanceState</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">super</span><span class="pun">.</span><span class="pln">onCreate</span><span class="pun">(</span><span class="pln">savedInstanceState</span><span class="pun">);</span><span class="pln">
+        setContentView</span><span class="pun">(</span><span class="pln">R</span><span class="pun">.</span><span class="pln">layout</span><span class="pun">.</span><span class="pln">main4</span><span class="pun">);</span><span class="pln">
+    
+    
+    
+        locationText </span><span class="pun">=</span><span class="pln"> </span><span class="pun">(</span><span class="typ">TextView</span><span class="pun">)</span><span class="kwd">this</span><span class="pun">.</span><span class="pln">findViewById</span><span class="pun">(</span><span class="pln">R</span><span class="pun">.</span><span class="pln">id</span><span class="pun">.</span><span class="pln">lblLocationInfo</span><span class="pun">);</span><span class="pln">
+        map </span><span class="pun">=</span><span class="pln"> </span><span class="pun">(</span><span class="typ">MapView</span><span class="pun">)</span><span class="kwd">this</span><span class="pun">.</span><span class="pln">findViewById</span><span class="pun">(</span><span class="pln">R</span><span class="pun">.</span><span class="pln">id</span><span class="pun">.</span><span class="pln">mapview</span><span class="pun">);</span><span class="pln">
+        map</span><span class="pun">.</span><span class="pln">setBuiltInZoomControls</span><span class="pun">(</span><span class="kwd">true</span><span class="pun">);</span><span class="pln">
+    
+        mapController </span><span class="pun">=</span><span class="pln"> map</span><span class="pun">.</span><span class="pln">getController</span><span class="pun">();</span><span class="pln"> 
+        mapController</span><span class="pun">.</span><span class="pln">setZoom</span><span class="pun">(</span><span class="lit">16</span><span class="pun">);</span><span class="pln">
+    
+    
+        </span><span class="typ">String</span><span class="pln"> latlon </span><span class="pun">=</span><span class="pln"> getIntent</span><span class="pun">().</span><span class="pln">getStringExtra</span><span class="pun">(</span><span class="str">"latlongstring"</span><span class="pun">);</span><span class="pln">
+        </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">friendlocation</span><span class="pun">(</span><span class="pln">latlon</span><span class="pun">);</span><span class="pln">
+    
+    </span><span class="pun">}</span><span class="pln">
+    
+    
+    
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> friendlocation</span><span class="pun">(</span><span class="typ">String</span><span class="pln"> latlon</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> 
+    
+        </span><span class="typ">String</span><span class="pln"> </span><span class="pun">[]</span><span class="pln"> location </span><span class="pun">=</span><span class="pln"> latlon</span><span class="pun">.</span><span class="pln">split</span><span class="pun">(</span><span class="str">"\\s+"</span><span class="pun">);</span><span class="pln">
+        </span><span class="kwd">double</span><span class="pln"> alt</span><span class="pun">=</span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">double</span><span class="pln"> bear</span><span class="pun">=</span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">double</span><span class="pln"> lat</span><span class="pun">=</span><span class="pln"> </span><span class="typ">Double</span><span class="pun">.</span><span class="pln">valueOf</span><span class="pun">(</span><span class="pln">location</span><span class="pun">[</span><span class="lit">0</span><span class="pun">].</span><span class="pln">trim</span><span class="pun">()).</span><span class="pln">doubleValue</span><span class="pun">();</span><span class="pln">
+        </span><span class="kwd">double</span><span class="pln"> lon</span><span class="pun">=</span><span class="typ">Double</span><span class="pun">.</span><span class="pln">valueOf</span><span class="pun">(</span><span class="pln">location</span><span class="pun">[</span><span class="lit">1</span><span class="pun">].</span><span class="pln">trim</span><span class="pun">()).</span><span class="pln">doubleValue</span><span class="pun">();</span><span class="pln">
+    
+      </span><span class="typ">String</span><span class="pln"> text </span><span class="pun">=</span><span class="pln"> </span><span class="typ">String</span><span class="pun">.</span><span class="pln">format</span><span class="pun">(</span><span class="str">"Lat:\t %f\nLong:\t %f\nAlt:\t %f\nBearing:\t %f"</span><span class="pun">,</span><span class="pln"> lat</span><span class="pun">,</span><span class="pln"> 
+                    lon</span><span class="pun">,</span><span class="pln"> alt</span><span class="pun">,</span><span class="pln">bear</span><span class="pun">);</span><span class="pln">
+      </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">locationText</span><span class="pun">.</span><span class="pln">setText</span><span class="pun">(</span><span class="pln">text</span><span class="pun">);</span><span class="pln">
+    
+      </span><span class="kwd">try</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="typ">List</span><span class="pun">&lt;</span><span class="typ">Address</span><span class="pun">&gt;</span><span class="pln"> addresses </span><span class="pun">=</span><span class="pln"> geocoder</span><span class="pun">.</span><span class="pln">getFromLocation</span><span class="pun">(</span><span class="pln">lat</span><span class="pun">,</span><span class="pln"> lon</span><span class="pun">,</span><span class="lit">10</span><span class="pun">);</span><span class="pln"> </span><span class="com">//&lt;10&gt;</span><span class="pln">
+        </span><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="typ">Address</span><span class="pln"> address </span><span class="pun">:</span><span class="pln"> addresses</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+          </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">locationText</span><span class="pun">.</span><span class="pln">append</span><span class="pun">(</span><span class="str">"\n"</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> address</span><span class="pun">.</span><span class="pln">getAddressLine</span><span class="pun">(</span><span class="lit">0</span><span class="pun">));</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+    
+        </span><span class="kwd">int</span><span class="pln"> latitude </span><span class="pun">=</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">int</span><span class="pun">)(</span><span class="pln">lat </span><span class="pun">*</span><span class="pln"> </span><span class="lit">1000000</span><span class="pun">);</span><span class="pln">
+        </span><span class="kwd">int</span><span class="pln"> longitude </span><span class="pun">=</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">int</span><span class="pun">)(</span><span class="pln">lon </span><span class="pun">*</span><span class="pln"> </span><span class="lit">1000000</span><span class="pun">);</span><span class="pln">
+    
+        point </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">GeoPoint</span><span class="pun">(</span><span class="pln">latitude</span><span class="pun">,</span><span class="pln">longitude</span><span class="pun">);</span><span class="pln">
+    
+    
+       mapController</span><span class="pun">.</span><span class="pln">animateTo</span><span class="pun">(</span><span class="pln">point</span><span class="pun">);</span><span class="pln">   
+       </span><span class="typ">MapOverlay</span><span class="pln"> mapOverlay </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">MapOverlay</span><span class="pun">();</span><span class="pln">
+       </span><span class="typ">List</span><span class="pun">&lt;</span><span class="typ">Overlay</span><span class="pun">&gt;</span><span class="pln"> listOfOverlays </span><span class="pun">=</span><span class="pln"> map</span><span class="pun">.</span><span class="pln">getOverlays</span><span class="pun">();</span><span class="pln">
+       listOfOverlays</span><span class="pun">.</span><span class="pln">clear</span><span class="pun">();</span><span class="pln">
+       listOfOverlays</span><span class="pun">.</span><span class="kwd">add</span><span class="pun">(</span><span class="pln">mapOverlay</span><span class="pun">);</span><span class="pln">
+    
+    
+        map</span><span class="pun">.</span><span class="pln">invalidate</span><span class="pun">();</span><span class="pln">
+    
+      </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">catch</span><span class="pln"> </span><span class="pun">(</span><span class="typ">IOException</span><span class="pln"> e</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="typ">Log</span><span class="pun">.</span><span class="pln">e</span><span class="pun">(</span><span class="str">"LocateMe"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Could not get friend location"</span><span class="pun">,</span><span class="pln"> e</span><span class="pun">);</span><span class="pln">
+      </span><span class="pun">}</span><span class="pln">
+    </span><span class="pun">}</span></code></pre>
+    <br>
+
+    <section style="margin: auto; width: 95%;">
+        <h4>Solution Outcome:</h2>
+        <p>
+            Automating the task of pulling data from specified SMS provider and parse that data into
+            an object with the condition of auto parsing in case of new SMS is received from the specified SMS provider.
+            Example: so if I received SMS with the value of ₹10 and 2nd SMS was ₹20, I automatically see the pulled data
+            which is the number ₹30 parsed in Google Keep or listonic or any app. The final number matters, so I would
+            balance my expenses and savings.
+        </p>
+    </section>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
