@@ -2,29 +2,143 @@
 <html>
 
 <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
     <title> 50/30/20 Budget Calculator </title>
-    <link rel="stylesheet" href="../css/style1.css">
+    <link rel="stylesheet" href="../css/budgetCalculator.css">
+    <link rel="icon" href="../Images/money-clip-art-4.jpg">
 </head>
 
-<body class="container">
-    <h1> Ctrl Alt Elite </h1>
-    <input id="id1" type="text" placeholder="Eg. 15000" size="50"/>
-    <br>
-    <br>
-    <button onclick="ness(); wants(); savings();">
-        compute
-    </button>
-    <br>
-    <br>
-    <section>
-        <label style="width: 200px; display: inline-block;">Necessities</label>
-        <input id="GFG_DOWN1" min="0" max="1000000" type="text" value=""/><br>
-        <label style="width: 200px; display: inline-block;">Wants</label>
-        <input id="GFG_DOWN2" min="0" max="1000000" type="text" value="" /><br>
-        <label style="width: 200px; display: inline-block;">Savings and paying off debt</label>
-        <input id="GFG_DOWN3" min="0" max="1000000" type="text" value="" /><br>
-    </section>
-    <script src="../js/budgetCalculator.js"></script>
+<body style="background-color: rgb(44, 44, 44); color: seashell;">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger" style="padding: 0.25%;">
+        <a class="navbar-brand" href="#" style="margin-left: 1%;"><img src="../Images/money-clip-art-4.jpg" alt="logo"
+                width="50" height="50" style="border-radius: 100%;"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="../index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../Pages/chat.html">Send/Request Money</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../Pages/SMS.html">SMS Parser</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="../Pages/budgetCalculator.html">50/30/20 Rule</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <h1> Ctrl Alt Elite - 50/30/20 Budget Calculator</h1>
+        <div class="calculation-block">
+            <p>Input your monthly after-tax income into this budget calculator to determine your spending.</p>
+            <input id="id1" type="text" placeholder="Eg. 15000" />
+            <br>
+            <div>
+                <button onclick="ness(); wants(); savings();" class="compute">
+                    compute
+                </button>
+            </div>
+
+            <br>
+            <br>
+            <section>
+                <label style="width: 200px; display: inline-block;">Necessities</label>
+                <input id="GFG_DOWN1" min="0" max="1000000" type="text" value="" /><br>
+                <label style="width: 200px; display: inline-block;">Wants</label>
+                <input id="GFG_DOWN2" min="0" max="1000000" type="text" value="" /><br>
+                <label style="width: 200px; display: inline-block;">Savings and paying off debt</label>
+                <input id="GFG_DOWN3" min="0" max="1000000" type="text" value="" /><br>
+            </section>
+        </div>
+
+        <div>
+            <h2>The 50/30/20 Rule</h2>
+            <p>
+                The 50/30/20 rule divides your take-home income into three categories: 50% for needs, 30% for wants and
+                20%
+                for savings and debt repayment. Here’s how it breaks down:
+            </p>
+            <p><b>Monthly after-tax income.</b> This figure is your income after taxes have been deducted and the cost
+                of
+                payroll
+                deductions for health insurance, 401(k) contributions or other automatic savings have been added back
+                in.
+            </p>
+            <p>
+                <b>50% of your income: needs</b> Necessities are the expenses you can’t avoid. This portion of your
+                budget
+                should cover costs such as:
+            <ul>
+                <li>Housing</li>
+                <li>Food</li>
+                <li>Transportation</li>
+                <li>Basic Utilities</li>
+                <li>Insurance</li>
+                <li>Minimum loan payment. Anything beyond the minimum goes into the savings and debt repayment bucket.
+                </li>
+                <li>Child care or other expenses that need to be covered so you can work.</li>
+            </ul>
+            </p>
+            <p>
+                <b>30% of your income: wants.</b> Distinguishing between needs and wants isn’t always easy and can vary
+                from
+                one
+                budget to another. Generally, though, wants are the extras that aren’t essential to living and working.
+                They’re often for fun and may include:
+            <ul>
+                <li>Monthly Subscription</li>
+                <li>Travel</li>
+                <li>Entertainment</li>
+                <li>Meals out</li>
+            </ul>
+            </p>
+            <p>
+                <b>20% of your income: savings and debt.</b> Savings is the amount you sock away to prepare for the
+                future.
+                Devote this chunk of your income to paying down existing debt and creating a comfortable financial
+                cushion
+                to avoid taking on future debt. <br>
+                How, exactly, to use this part of your budget depends on your situation, but it will likely include:
+            <ul>
+                <li>Starting and growing an emergency fund.</li>
+                <li>Saving for retirement through a 401(k) and perhaps an individual retirement account.</li>
+                <li>Paying off debt, beginning with the toxic, high-interest type.</li>
+            </ul>
+            </p>
+            <img src="../Images/budgetgraphic.jpg" class="graphic" alt="Budget Craphics 50/30/20 Visual Representation"
+                style="border-radius: 5%;">
+
+        </div>
+        <script src="../js/budgetCalculator.js"></script>
+
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
