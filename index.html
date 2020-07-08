@@ -10,12 +10,32 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/scroll.css">
 
     <title>Ctrl Alt Elite - Finance Manager</title>
     <link rel="icon" href="Images/money-clip-art-4.jpg">
+
+    <style>
+        section {
+            display: block;
+            width: 95%;
+            margin: auto;
+            margin-top: 20px;
+            max-width: 850px;
+        }
+
+        a {
+            color: cyan;
+        }
+
+        a:hover {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
 </head>
 
-<body style="background-color: rgb(44, 44, 44);">
+<body style="background-color: rgb(44, 44, 44); color: seashell;">
     <nav class="navbar navbar-expand-lg navbar-dark bg-danger" style="padding: 0.25%;">
         <a class="navbar-brand" href="#" style="margin-left: 1%;"><img src="Images/money-clip-art-4.jpg" alt="logo"
                 width="50" height="50" style="border-radius: 20%;"></a>
@@ -26,7 +46,7 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/index.html">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="Pages/chat.html">Send/Request Money</a>
@@ -38,10 +58,7 @@
                     <a class="nav-link" href="Pages/budgetCalculator.html">50/30/20 Rule</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="Pages/budgetCalculator.html">50/30/20 Rule</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="Pages/budgetCalculator.html">50/30/20 Rule</a>
+                    <a class="nav-link" href="Pages/wallet.html">Wallet</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -80,10 +97,11 @@
                 <img src="https://source.unsplash.com/1600x600/?finance" class="d-block w-100" alt="a finance pic">
                 <div class="carousel-caption d-none d-md-block">
                     <div style="background-color: rgb(252, 125, 125, 0.7);">
-                        <h5>First slide label</h5>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        <h5>Try our Wallet!</h5>
+                        <p>Wallet Frontend. Try Adding and Withdrawing Money.</p>
                     </div>
-                    <button type="button" class="btn btn-danger">Danger</button>
+                    <a href="Pages/wallet.html" style="color: seashell;"><button type="button"
+                            class="btn btn-danger">Wallet</button></a>
                 </div>
             </div>
             <div class="carousel-item">
@@ -91,20 +109,21 @@
                     alt="a pic related to money">
                 <div class="carousel-caption d-none d-md-block">
                     <div style="background-color: rgb(252, 125, 125, 0.7);">
-                        <h5>2 slide label</h5>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        <h5>50/30/20 Rule</h5>
+                        <p>Why not, just... Let Budget flow smooth</p>
                     </div>
-                    <button type="button" class="btn btn-danger">Danger</button>
+                    <a href="Pages/budgetCalculator.html"><button type="button"
+                            class="btn btn-danger">50/30/20</button></a>
                 </div>
             </div>
             <div class="carousel-item">
                 <img src="https://source.unsplash.com/1600x600/?currency" class="d-block w-100" alt="a currency pic">
                 <div class="carousel-caption d-none d-md-block">
                     <div style="background-color: rgb(252, 125, 125, 0.7);">
-                        <h5>3 slide label</h5>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        <h5>Send/Request Money</h5>
+                        <p>Ever thought? Transfering money as easy as sending a WhatsApp Message</p>
                     </div>
-                    <button type="button" class="btn btn-danger">Danger</button>
+                    <a href="Pages/chat.html"><button type="button" class="btn btn-danger">Talk Money!</button></a>
                 </div>
             </div>
         </div>
@@ -117,9 +136,148 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
+    <br>
 
+    <section>
+        <h2>Index</h2>
+        <section>
+            <ul>
+                <li><a href="#intro"> Introduction to Problem Statement</a></li>
+                <li><a href="#approach">Our Approach to Problem</a></li>
+                <li><a href="#about"> About Project</a></li>
+                <li><a href="#desc"> Description</a></li>
+                <li><a href="#tech"> Technologies we used</a></li>
+                <li><a href="#challenges">Challenges Faced</a></li>
+                <li><a href="#goals">Future Goals</a>
+                    <ul>
+                        <li><a href="#short"> Short-term</a></li>
+                        <li><a href="#mid"> Mid-term</a></li>
+                        <li><a href="#long">Long-term</a></li>
+                    </ul>
+                </li>
+                <li><a href="#req"> Requirements</a></li>
+                <li><a href="#about"> About Us</a></li>
+            </ul>
+        </section>
+    </section>
 
-
+    <section id="intro">
+        <h2>Introduction to Problem Statement</h2>
+        <section>
+            <strong>Problem ID: </strong><i>AANBBM004</i><br>
+            <strong>Problem Statement: </strong><i>Personalized Finance Management System</i>
+        </section>
+    </section>
+    <section id="approach">
+        <h2>Our Approach to Problem</h2>
+        <section>
+            <ol>
+                <li>Our first step was to identify various service providers who have worked to something similar to
+                    what we have.</li>
+                <li>Then design a good interface for our webpage/app.</li>
+                <li>Find open source images to avoid copyright issue. <a href="https://pixabay.com/">Pixabay</a> and <a
+                        href="https://www.pexels.com/">Pexels</a> were used.</li>
+                <li>Build HTML5 skeleton and then ass CSS3 stylesheets to it. <a
+                        href="https://getbootstrap.com/">Bootstrap</a> was used for Navigation Bar and Footer.</li>
+                <li>JavaScript was used to provide basic interactivity to web pages.</li>
+                <li>Backend shall be developed at the end. <strong>Plan: </strong> to use <i>php</i>.</li>
+            </ol>
+        </section>
+    </section>
+    <section id="abt">
+        <h2>About Project</h2>
+        <section>
+            Project primarily focuses on automating routine life tasks like maintaining a wallet, transaction history,
+            keeping track of cash flow. It takes a lot of time and effort in maintaining record of our spendings on
+            day-to-day basis.
+        </section>
+    </section>
+    <section id="desc">
+        <h2>Description</h2>
+        <section>
+            <p><b>Personal finance</b> is the financial management which an individual or a family unit
+                performs to budget, save, and spend monetary resources over time, taking into account
+                various financial risks and future life events.</p>
+            <p>Budgeting, Spending, and Saving. Personal finance skills help you to understand how
+                much you earn, what are your monthly expenses, and help you to budget within that
+                income.</p>
+        </section>
+    </section>
+    <section id="tech">
+        <h2>Technologies we used</h2>
+        <section>
+            <h4><span class="badge badge-primary">HTML5</span>
+            <span class="badge badge-secondary">CSS3</span>
+            <span class="badge badge-success">JavaScript</span>
+            <span class="badge badge-danger">socket.IO</span>
+            <span class="badge badge-warning">node.js</span></h4>
+        </section>
+    </section>
+    <section id="challenges">
+        <h2>Challenges Faced</h2>
+        <section>
+            <ol>
+                <li><b>Cultural: </b>Coming from a Mechanical Engineering background, creating a web based framework to execute our work was biggest challenge for us.</li>
+                <li><b>Scratch: </b>New ideas which have never been worked upon before, need to be developed from the very beginning. Our project required us to develop an interface which has to be </li>
+                <li><b>Updated Tech.: </b>Relatively new technologies like <i>socket.io</i> & <i>node.js</i> were the terms we were either only acquainted with or were not aware about at all.</li>
+                <li><b>Interactivity: </b>JavaScript was also amongst the major setbacks we had during this project. Learning as well as applying it properly with proper DOM in such a small time span was difficult.</li>
+                <li><b>Navigation: </b>Apart from just delivering the application wapdate proveides, we also had to make sure that our application didn't just a <i>set of pages</i>, but rather, a <i>set of <b>web</b>pages</i>. User whould feel comfortable while not only absorbing information, but also while navigating through it.</li>
+                <li><b>Responsive: </b>Keeping in mind that users will be using this webpage/web-application mostly from their portable devices, we had to keep it as responsive as possible.</li>
+            </ol>
+        </section>
+    </section>
+    <section id="goals">
+        <h2>Future Goals</h2>
+        <section>
+            <h3 id="short">Short Term Goals</h3>
+            <section>
+                <ol>
+                    <li>Installing socket.io for secured communication amongst users.</li>
+                    <li>Using nodeJS for initializing the socket. And also provide a secured connection.</li>
+                    <li><strong>Log-in feature</strong>(obviously), to keep a record of everything.</li>
+                </ol>
+            </section>
+            <h3 id="mid">Mid-Term Goals</h3>
+            <section>
+                <ol>
+                <li><b>Security</b> is our primary concern.</li>
+                <li>With time, demands also change and so does our supplies to our App Users. Adding new features.</li>
+                <li>Frequent updates, but not too often. Application based on Java and strengthening web backend framework.</li>
+                <li>Plan to use our own servers for security concerns.</li></ol>
+            </section>
+            <h3 id="long">Long Term Goals</h3>
+            <section>
+                <ol>
+                <li><strong>Pioneering e-Fianance Industry.</strong></li>
+                <li>Create the MOST secured, safe and user-friendy experience for our customers.</li>
+                <li>Expand network globally in order to achieve world-wide access.</li>
+            </ol>
+            </section>
+        </section>
+    </section>
+    <section id="req">
+        <h2>Requirements</h2>
+        <section>
+            <ul>
+                <li>Finance advisors</li>
+                <li>Some more deveopers</li>
+                <li>Server Room</li>
+                <li>Visionaries in our team</li>
+            </ul>
+        </section>
+    </section>
+    <section id="about">
+        <h2>About Us</h2>
+        <section>
+            This project was undertaken by two <i>1st Year Mechanical Engineering Students</i>,<p>
+                <ul>
+                    <li><i>Keivalya Pandya</i></li>
+                    <li><i>Ronak Abhani</i></li>
+                </ul>
+            </p>
+             from <b>Birla Vishvakarma Mahavidyalaya</b>. We wish to - "Make a dent in the universe" and "Be the <i>change</i> we want to see in this world!"
+        </section>
+    </section>
 
     <footer> &copy; Team CtrlAlt - Elite</footer>
     <!-- Optional JavaScript -->

@@ -11,6 +11,7 @@ input {
     font-weight: 500;
 }
 
+
 body{
     display: block;
 }
@@ -59,7 +60,7 @@ input[type="text"]::placeholder {
   
 @-moz-document url-prefix() {
       input[type="text"]::placeholder {
-          text-shadow: 0 17px 0 rgba(0, 0, 0, 0.8);
+          text-shadow: 0 15px 0 rgba(0, 0, 0, 0.8);
           color: transparent;
       }
 }

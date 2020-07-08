@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>CtrlAlt - Elite: Send/Request</title>
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="../css/chat.css">
-    <link rel="icon" href="../Images/money-clip-art-4.jpg">
+    <link rel="stylesheet" href="../css/footer.css">
+    <title>Wallet UI Design</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/wallet.css">
+    <script src="../js/wallet.js"></script>
 </head>
-
 <body>
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-danger" style="padding: 0.25%;">
         <a class="navbar-brand" href="#" style="margin-left: 1%;"><img src="../Images/money-clip-art-4.jpg" alt="logo"
                 width="50" height="50" style="border-radius: 20%;"></a>
@@ -26,7 +29,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="../index.html">Home <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="../Pages/chat.html">Send/Request Money</a>
                 </li>
                 <li class="nav-item">
@@ -35,7 +38,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="../Pages/budgetCalculator.html">50/30/20 Rule</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="../Pages/wallet.html">Wallet</a>
                 </li>
                 <li class="nav-item dropdown">
@@ -69,45 +72,59 @@
         </div>
     </nav>
 
-    <nav>
-        <img class="logo" src="../Images/money-clip-art-4.jpg" alt="">
-    </nav>
-    <div class="container">
-        <div class="message right">This is simply a front-end of chat window to give an idea of concept. How shall we
-            communicate in real time?</div>
-        <div class="message left">Backend shall be developed using NodeJS and Socket.io.</div>
-        <div class="message right">What is socket.io?</div>
-        <div class="message left">Socket.IO enables real-time, bidirectional and event-based communication.
-            It works on every platform, browser or device, focusing equally on reliability and speed.</div>
-        <div class="message right">That sounds cool! Where shall I find it's documantation?</div>
-        <div class="message left">Follow up their official site for more information. <a href="https://socket.io/">LINK!</a> </div>
+    <div class="wallet-container text-center"><p class="page-title"><i class="fa fa-align-left"></i>
+        My E-Wallet<i class="fa fa-user"></i></p>
+    
+    <div class="amount-box text-center">
+        <p>Total Balance</p>
+        <p id="tot" class="amount">0</p>
     </div>
 
-    <div class="buttons">
-        <button class="req">Request Money</button>
-        <button class="pay">Pay Money</button>
+    <div class="btn-group text-center">
+        <button type="button" class="btn btn-outline-light" onclick="addMoney()">Add Money</button>
+        <button type="button" class="btn btn-outline-light" onclick="withdrawMoney()">Withdraw</button>
+    </div>    
+
+    <div class="txn-history">
+        <p><b>History</b></p>
+        <p class="txn-list">Payment to BVM Tuition Fee<span class="debit-amount">-1000</span></p>
+        <p class="txn-list">Payment to PM Cares<span class="debit-amount">-800</span></p>
+        <p class="txn-list">Credit from Russian Bussiness<span class="credit-amount">+200</span></p>
+        <p class="txn-list">Transfer from Web Freelence<span class="credit-amount">+700</span></p>
     </div>
 
-    <div class="send">
-        <form action="#" id="send-container">
-            <input type="text" name="messageInp" id="messageInp">
-            <button class="btncust" type="submit">Send</button>
-        </form>
+    <div class="footer-menu">
+        <div class="row text-center">
+            <div class="col-md-3">
+                <i class="fa fa-home"><p>Home</p></i>
+            </div>
+            <div class="col-md-3">
+                <i class="fa fa-inbox"><p>Inbox</p></i>
+            </div>
+            <div class="col-md-3">
+                <i class="fa fa-university"><p>Bank</p></i>
+            </div>
+            <div class="col-md-3">
+                <i class="fa fa-barcode"><p>Scan</p></i>
+            </div>
+        </div>
     </div>
 
-    <footer> &copy; Team CtrlAlt - Elite</footer>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-        crossorigin="anonymous"></script>
+</div>
+
+<footer style="position: absolute; bottom: 0;"> &copy; Team CtrlAlt - Elite</footer>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
 </body>
-
 </html>

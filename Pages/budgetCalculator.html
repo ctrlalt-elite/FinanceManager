@@ -14,13 +14,14 @@
     <title> 50/30/20 Budget Calculator </title>
     <link rel="stylesheet" href="../css/budgetCalculator.css">
     <link rel="icon" href="../Images/money-clip-art-4.jpg">
+    <link rel="stylesheet" href="../css/footer.css">
 </head>
 
 <body style="background-color: rgb(44, 44, 44); color: seashell;">
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-danger" style="padding: 0.25%;">
         <a class="navbar-brand" href="#" style="margin-left: 1%;"><img src="../Images/money-clip-art-4.jpg" alt="logo"
-                width="50" height="50" style="border-radius: 100%;"></a>
+                width="50" height="50" style="border-radius: 20%;"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -39,6 +40,36 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="../Pages/budgetCalculator.html">50/30/20 Rule</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../Pages/wallet.html">Wallet</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Ways to save
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="../Pages/waystosavemoney.html">Ways to save money</a>
+                        <a class="dropdown-item" href="../Pages/trickyourself.html">Trick yourself into saving</a>
+                        <a class="dropdown-item" href="../Pages/lowercablebill.html">Lower your cable bill</a>
+                        <a class="dropdown-item" href="../Pages/saveonelectricbills.html">Save on Electric Bills</a>
+                        <a class="dropdown-item" href="../Pages/saveonflights.html">How to save on flights</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Finance Tips
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="../Pages/buildabudget.html">How to build a budget</a>
+                        <a class="dropdown-item" href="../Pages/howtotrackexpenses.html">How to track expenses</a>
+                        <!-- <div class="dropdown-divider"></div> -->
+                        <a class="dropdown-item" href="../Pages/shortlongtermgoals.html">Short- vs. Long- term goals</a>
+                        <a class="dropdown-item" href="../Pages/choosingbudgetsystem.html">Choosing a Budget System</a>
+                        <a class="dropdown-item" href="../Pages/handledebt.html">How to handle debt</a>
+                    </div>
+                </li>
             </ul>
         </div>
     </nav>
@@ -50,7 +81,7 @@
             <input id="id1" type="text" placeholder="Eg. 15000" />
             <br>
             <div>
-                <button onclick="ness(); wants(); savings();" class="compute">
+                <button id = "buttonid" onclick="ness(); wants(); savings();" class="compute">
                     compute
                 </button>
             </div>
@@ -139,6 +170,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
+
+        <footer> &copy; Team CtrlAlt - Elite</footer>
 </body>
 
 </html>
